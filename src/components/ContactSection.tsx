@@ -49,8 +49,8 @@ const ContactSection = () => {
     {
       icon: Phone,
       label: "Phone",
-      value: "+92 (307) 307-0007428",
-      href: "tel:+923073070007428",
+      value: "+92 (307) 0007428",
+      href: "tel:+923070007428",
     },
     {
       icon: MapPin,
