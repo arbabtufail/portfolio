@@ -38,8 +38,24 @@ const AboutSection = () => {
           {/* Left side - Image placeholder */}
           <div className="order-2 lg:order-1">
             <div className="bg-card-gradient rounded-2xl p-8 shadow-card">
-              <div className="aspect-square bg-secondary rounded-xl flex items-center justify-center">
+              <div className="aspect-square bg-secondary rounded-xl flex items-center justify-center relative overflow-hidden">
                 <span className="text-muted-foreground text-lg">Professional Photo</span>
+                
+                {/* Project Count - Top Right */}
+                <div className="absolute top-4 right-4 bg-primary/90 text-primary-foreground rounded-lg px-3 py-2 text-sm font-semibold shadow-lg">
+                  <div className="text-center">
+                    <div className="text-xl font-bold">50+</div>
+                    <div className="text-xs opacity-90">Projects</div>
+                  </div>
+                </div>
+                
+                {/* Experience Count - Bottom Left */}
+                <div className="absolute bottom-4 left-4 bg-accent/90 text-accent-foreground rounded-lg px-3 py-2 text-sm font-semibold shadow-lg">
+                  <div className="text-center">
+                    <div className="text-xl font-bold">5+</div>
+                    <div className="text-xs opacity-90">Years</div>
+                  </div>
+                </div>
               </div>
             </div>
           </div>

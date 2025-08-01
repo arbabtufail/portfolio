@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import SkillsSection from "@/components/SkillsSection";
+import Footer from "@/components/Footer";
 
 const Skills = () => {
   return (
@@ -8,6 +9,7 @@ const Skills = () => {
       <main className="pt-16">
         <SkillsSection />
       </main>
+      <Footer />
     </div>
   );
 };

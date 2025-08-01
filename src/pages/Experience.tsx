@@ -1,5 +1,6 @@
 import Navigation from "@/components/Navigation";
 import ExperienceSection from "@/components/ExperienceSection";
+import Footer from "@/components/Footer";
 
 const Experience = () => {
   return (
@@ -8,6 +9,7 @@ const Experience = () => {
       <main className="pt-16">
         <ExperienceSection />
       </main>
+      <Footer />
     </div>
   );
 };
