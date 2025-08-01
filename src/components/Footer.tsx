@@ -86,12 +86,9 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="border-t border-border mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+        <div className="border-t border-border mt-12 pt-8 text-center">
           <p className="text-muted-foreground text-sm">
             © {currentYear} Portfolio. All rights reserved.
-          </p>
-          <p className="text-muted-foreground text-sm flex items-center gap-2 mt-4 md:mt-0">
-            Made with <Heart className="h-4 w-4 text-red-500" /> using React & TypeScript
           </p>
         </div>
       </div>

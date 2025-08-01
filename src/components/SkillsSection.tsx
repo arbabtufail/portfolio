@@ -1,39 +1,29 @@
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Progress } from "@/components/ui/progress";
 import { Badge } from "@/components/ui/badge";
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 
 const SkillsSection = () => {
-  const skillCategories = [
-    {
-      title: "Frontend Development",
-      skills: [
-        { name: "React/Next.js", level: 95 },
-        { name: "TypeScript", level: 90 },
-        { name: "JavaScript", level: 95 },
-        { name: "CSS/Tailwind", level: 90 },
-        { name: "HTML5", level: 95 }
-      ]
-    },
-    {
-      title: "Backend Development",
-      skills: [
-        { name: "Node.js", level: 85 },
-        { name: "Express.js", level: 80 },
-        { name: "PostgreSQL", level: 85 },
-        { name: "MongoDB", level: 75 },
-        { name: "API Design", level: 90 }
-      ]
-    },
-    {
-      title: "Tools & Technologies",
-      skills: [
-        { name: "Git/GitHub", level: 90 },
-        { name: "Docker", level: 75 },
-        { name: "AWS", level: 70 },
-        { name: "Figma", level: 85 },
-        { name: "Testing", level: 80 }
-      ]
-    }
+  const frontendSkills = [
+    { name: "React/Next.js", level: 95, color: "bg-blue-500" },
+    { name: "TypeScript", level: 90, color: "bg-blue-600" },
+    { name: "JavaScript", level: 95, color: "bg-yellow-500" },
+    { name: "CSS/Tailwind", level: 90, color: "bg-cyan-500" },
+    { name: "HTML5", level: 95, color: "bg-orange-500" },
+    { name: "Vue.js", level: 80, color: "bg-green-500" },
+    { name: "Sass/SCSS", level: 85, color: "bg-pink-500" },
+    { name: "Webpack", level: 75, color: "bg-blue-400" }
+  ];
+
+  const backendSkills = [
+    { name: "Node.js", level: 85, color: "bg-green-600" },
+    { name: "Express.js", level: 80, color: "bg-gray-600" },
+    { name: "PostgreSQL", level: 85, color: "bg-blue-700" },
+    { name: "MongoDB", level: 75, color: "bg-green-700" },
+    { name: "API Design", level: 90, color: "bg-purple-600" },
+    { name: "Python", level: 70, color: "bg-yellow-600" },
+    { name: "Docker", level: 75, color: "bg-blue-500" },
+    { name: "AWS", level: 70, color: "bg-orange-600" }
   ];
 
   const additionalSkills = [
@@ -54,27 +44,45 @@ const SkillsSection = () => {
           </p>
         </div>
 
-        {/* Main Skills with Progress Bars */}
-        <div className="grid lg:grid-cols-3 gap-8 mb-16">
-          {skillCategories.map((category, index) => (
-            <Card key={index} className="bg-card-gradient border-border hover:shadow-card transition-all duration-300">
-              <CardHeader>
-                <CardTitle className="text-xl text-center">{category.title}</CardTitle>
-              </CardHeader>
-              <CardContent className="space-y-6">
-                {category.skills.map((skill, skillIndex) => (
-                  <div key={skillIndex} className="space-y-2">
-                    <div className="flex justify-between items-center">
-                      <span className="font-medium">{skill.name}</span>
-                      <span className="text-sm text-muted-foreground">{skill.level}%</span>
+        {/* Skills Tabs */}
+        <Tabs defaultValue="frontend" className="mb-16">
+          <TabsList className="grid w-full grid-cols-2 max-w-md mx-auto mb-8">
+            <TabsTrigger value="frontend">Frontend</TabsTrigger>
+            <TabsTrigger value="backend">Backend</TabsTrigger>
+          </TabsList>
+          
+          <TabsContent value="frontend">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {frontendSkills.map((skill, index) => (
+                <Card key={index} className="bg-card-gradient border-border hover:shadow-card transition-all duration-300 group">
+                  <CardContent className="p-6 text-center">
+                    <div className={`w-16 h-16 ${skill.color} rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                      <span className="text-white font-bold text-lg">{skill.level}%</span>
                     </div>
+                    <h3 className="font-semibold text-sm mb-2">{skill.name}</h3>
                     <Progress value={skill.level} className="h-2" />
-                  </div>
-                ))}
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </TabsContent>
+          
+          <TabsContent value="backend">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+              {backendSkills.map((skill, index) => (
+                <Card key={index} className="bg-card-gradient border-border hover:shadow-card transition-all duration-300 group">
+                  <CardContent className="p-6 text-center">
+                    <div className={`w-16 h-16 ${skill.color} rounded-full flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300`}>
+                      <span className="text-white font-bold text-lg">{skill.level}%</span>
+                    </div>
+                    <h3 className="font-semibold text-sm mb-2">{skill.name}</h3>
+                    <Progress value={skill.level} className="h-2" />
+                  </CardContent>
+                </Card>
+              ))}
+            </div>
+          </TabsContent>
+        </Tabs>
 
         {/* Additional Skills */}
         <Card className="bg-card-gradient border-border">
@@ -93,17 +101,17 @@ const SkillsSection = () => {
         </Card>
 
         {/* Skills Summary */}
-        <div className="grid md:grid-cols-3 gap-8 mt-16">
+        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-16">
           <div className="text-center">
-            <div className="text-4xl font-bold text-primary mb-2">5+</div>
+            <div className="text-3xl md:text-4xl font-bold text-primary mb-2">5+</div>
             <div className="text-muted-foreground">Years Experience</div>
           </div>
           <div className="text-center">
-            <div className="text-4xl font-bold text-primary mb-2">50+</div>
+            <div className="text-3xl md:text-4xl font-bold text-primary mb-2">50+</div>
             <div className="text-muted-foreground">Projects Completed</div>
           </div>
           <div className="text-center">
-            <div className="text-4xl font-bold text-primary mb-2">20+</div>
+            <div className="text-3xl md:text-4xl font-bold text-primary mb-2">20+</div>
             <div className="text-muted-foreground">Technologies Mastered</div>
           </div>
         </div>

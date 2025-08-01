@@ -40,21 +40,17 @@ const AboutSection = () => {
             <div className="bg-card-gradient rounded-2xl p-8 shadow-card">
               <div className="aspect-square bg-secondary rounded-xl flex items-center justify-center relative overflow-hidden">
                 <span className="text-muted-foreground text-lg">Professional Photo</span>
-                
-                {/* Project Count - Top Right */}
-                <div className="absolute top-4 right-4 bg-primary/90 text-primary-foreground rounded-lg px-3 py-2 text-sm font-semibold shadow-lg">
-                  <div className="text-center">
-                    <div className="text-xl font-bold">50+</div>
-                    <div className="text-xs opacity-90">Projects</div>
-                  </div>
+              </div>
+              
+              {/* Stats outside the image */}
+              <div className="flex justify-between mt-6 gap-4">
+                <div className="bg-primary/10 text-primary rounded-lg px-4 py-3 text-center flex-1">
+                  <div className="text-2xl font-bold">50+</div>
+                  <div className="text-sm opacity-80">Projects</div>
                 </div>
-                
-                {/* Experience Count - Bottom Left */}
-                <div className="absolute bottom-4 left-4 bg-accent/90 text-accent-foreground rounded-lg px-3 py-2 text-sm font-semibold shadow-lg">
-                  <div className="text-center">
-                    <div className="text-xl font-bold">5+</div>
-                    <div className="text-xs opacity-90">Years</div>
-                  </div>
+                <div className="bg-accent/10 text-accent rounded-lg px-4 py-3 text-center flex-1">
+                  <div className="text-2xl font-bold">5+</div>
+                  <div className="text-sm opacity-80">Years</div>
                 </div>
               </div>
             </div>
