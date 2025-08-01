@@ -13,13 +13,15 @@ const ContactSection = () => {
     name: "",
     email: "",
     subject: "",
-    message: ""
+    message: "",
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleInputChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+    setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -41,39 +43,39 @@ const ContactSection = () => {
     {
       icon: Mail,
       label: "Email",
-      value: "john@example.com",
-      href: "mailto:john@example.com"
+      value: "arbabtufail2022@gmail.com",
+      href: "mailto:arbabtufail2022@gmail.com",
     },
     {
       icon: Phone,
       label: "Phone",
-      value: "+1 (555) 123-4567",
-      href: "tel:+15551234567"
+      value: "+92 (307) 307-0007428",
+      href: "tel:+923073070007428",
     },
     {
       icon: MapPin,
       label: "Location",
-      value: "San Francisco, CA",
-      href: "#"
-    }
+      value: "Lahore, Pakistan",
+      href: "#",
+    },
   ];
 
   const socialLinks = [
     {
       icon: Github,
       label: "GitHub",
-      href: "https://github.com"
+      href: "https://github.com/arbabtufail",
     },
     {
       icon: Linkedin,
       label: "LinkedIn",
-      href: "https://linkedin.com"
+      href: "https://www.linkedin.com/in/arbab-tufail/",
     },
-    {
-      icon: Twitter,
-      label: "Twitter",
-      href: "https://twitter.com"
-    }
+    // {
+    //   icon: Twitter,
+    //   label: "Twitter",
+    //   href: "https://twitter.com",
+    // },
   ];
 
   return (
@@ -81,10 +83,14 @@ const ContactSection = () => {
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            Get In <span className="bg-text-gradient bg-clip-text text-transparent">Touch</span>
+            Get In{" "}
+            <span className="bg-text-gradient bg-clip-text text-transparent">
+              Touch
+            </span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Have a project in mind or want to collaborate? I'd love to hear from you.
+            Have a project in mind or want to collaborate? I'd love to hear from
+            you.
           </p>
         </div>
 
@@ -121,7 +127,7 @@ const ContactSection = () => {
                     />
                   </div>
                 </div>
-                
+
                 <div className="space-y-2">
                   <Label htmlFor="subject">Subject</Label>
                   <Input
@@ -133,7 +139,7 @@ const ContactSection = () => {
                     placeholder="What's this about?"
                   />
                 </div>
-                
+
                 <div className="space-y-2">
                   <Label htmlFor="message">Message</Label>
                   <Textarea
@@ -146,11 +152,11 @@ const ContactSection = () => {
                     rows={6}
                   />
                 </div>
-                
-                <Button 
-                  type="submit" 
-                  variant="hero" 
-                  size="lg" 
+
+                <Button
+                  type="submit"
+                  variant="hero"
+                  size="lg"
                   className="w-full"
                   disabled={isSubmitting}
                 >
@@ -175,8 +181,8 @@ const ContactSection = () => {
                     </div>
                     <div>
                       <div className="font-medium">{info.label}</div>
-                      <a 
-                        href={info.href} 
+                      <a
+                        href={info.href}
                         className="text-muted-foreground hover:text-primary transition-colors"
                       >
                         {info.value}
@@ -218,7 +224,7 @@ const ContactSection = () => {
                     Available for new projects
                   </div>
                   <p className="text-muted-foreground">
-                    I'm currently accepting new projects and collaborations. 
+                    I'm currently accepting new projects and collaborations.
                     Let's create something amazing together!
                   </p>
                 </div>
