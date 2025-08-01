@@ -11,7 +11,7 @@ const SkillsSection = () => {
     { name: "CSS/Tailwind", level: 90, color: "bg-cyan-500" },
     { name: "React Native", level: 80, color: "bg-orange-500" },
 
-    { name: " Bubble.io", level: 85, color: "bg-pink-500" },
+    { name: " Bubble.io", level: 70, color: "bg-pink-500" },
   ];
 
   const backendSkills = [
@@ -22,7 +22,7 @@ const SkillsSection = () => {
     { name: "MongoDB", level: 75, color: "bg-green-700" },
     { name: "API Design", level: 90, color: "bg-purple-600" },
     { name: "AWS", level: 70, color: "bg-orange-600" },
-    { name: "N8N", level: 80, color: "bg-green-500" },
+    { name: "N8N", level: 70, color: "bg-green-500" },
   ];
 
   const additionalSkills = [
@@ -132,13 +132,13 @@ const SkillsSection = () => {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-16">
           <div className="text-center">
             <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
-              5+
+              3+
             </div>
             <div className="text-muted-foreground">Years Experience</div>
           </div>
           <div className="text-center">
             <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
-              50+
+              10+
             </div>
             <div className="text-muted-foreground">Projects Completed</div>
           </div>

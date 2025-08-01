@@ -62,7 +62,7 @@ const ExperienceSection = () => {
       description:
         "Specialized in creating beautiful, interactive user interfaces.",
       technologies: ["JavaScript", "React", "CSS3", "HTML5", "Figma"],
-      achievements: ["Delivered 10+ Projects"],
+      achievements: ["Delivered 5+ Projects"],
     },
   ];
 

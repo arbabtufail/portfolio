@@ -48,7 +48,7 @@ const AboutSection = () => {
               {/* Stats outside the image */}
               <div className="flex justify-between mt-6 gap-4">
                 <div className="bg-primary/10 text-primary rounded-lg px-4 py-3 text-center flex-1">
-                  <div className="text-2xl font-bold">12+</div>
+                  <div className="text-2xl font-bold">10+</div>
                   <div className="text-sm opacity-80">Projects</div>
                 </div>
                 <div className="bg-primary/10 text-primary rounded-lg px-4 py-3 text-center flex-1">
@@ -61,13 +61,16 @@ const AboutSection = () => {
 
           {/* Right side - Content */}
           <div className="order-1 lg:order-2">
-            <div className="space-y-6">
+            <div className="space-y-5">
               <p className="text-lg text-muted-foreground leading-relaxed">
-                I'm a passionate full-stack developer and designer with a love
-                for creating exceptional digital experiences. My journey began
-                with curiosity about how things work on the web, and it has
-                evolved into a career dedicated to building innovative
-                solutions.
+                Skilled Full Stack Developer with over 3 years of hands-on
+                experience building scalable web and mobile applications.
+                Proficient in modern technologies across the frontend and
+                backend, including React, React Native, Node.js, NestJS,
+                Firebase, and PostgreSQL. Experienced in low-code tools like
+                Bubble.io and workflow automation with n8n. Passionate about
+                creating user-friendly solutions, integrating AI-driven
+                features, and optimizing performance for real-world impact.
               </p>
 
               <p className="text-lg text-muted-foreground leading-relaxed">
