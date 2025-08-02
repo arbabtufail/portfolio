@@ -63,21 +63,27 @@ const AboutSection = () => {
           <div className="order-1 lg:order-2">
             <div className="space-y-5">
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Skilled Full Stack Developer with over 3 years of hands-on
-                experience building scalable web and mobile applications.
-                Proficient in modern technologies across the frontend and
-                backend, including React, React Native, Node.js, NestJS,
-                Firebase, and PostgreSQL. Experienced in low-code tools like
-                Bubble.io and workflow automation with n8n. Passionate about
-                creating user-friendly solutions, integrating AI-driven
-                features, and optimizing performance for real-world impact.
+                Experienced Full Stack Developer with 3+ years of expertise in
+                designing, developing, and maintaining dynamic web and mobile
+                applications. I specialize in building modern UIs using React
+                and Next.js, and scalable cross-platform apps with React Native.
+                On the backend, I architect RESTful and GraphQL APIs using
+                Node.js and NestJS, integrate cloud services like Firebase and
+                AWS, and work with both relational (PostgreSQL) and NoSQL
+                (MongoDB) databases using Prisma ORM and Mongoose. I also
+                leverage low-code tools like Bubble.io to rapidly prototype MVPs
+                and use n8n for workflow automation, data processing, and
+                third-party integrations. Many of my projects incorporate OpenAI
+                for intelligent, AI-powered features. I focus on clean,
+                maintainable code, high performance, and delivering user-centric
+                digital solutions at scale.
               </p>
 
               <p className="text-lg text-muted-foreground leading-relaxed">
-                When I'm not coding, you'll find me exploring new technologies,
-                contributing to open-source projects, or sharing knowledge with
-                the developer community. I believe in continuous learning and
-                staying ahead of industry trends.
+                Outside of development, I stay immersed in emerging
+                technologies, actively experiment with AI and automation tools,
+                and continuously learn to stay ahead of industry trends through
+                hands-on projects and community engagement.
               </p>
 
               <div className="pt-4">

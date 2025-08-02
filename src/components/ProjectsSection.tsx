@@ -22,6 +22,17 @@ const ProjectsSection = () => {
       featured: true,
     },
     {
+      title: "Experios Immersive Escape Rooms Platform",
+      description:
+        "Experios brings people together by creating fun experiences that last.Collaborated on online escape room development and added new games with React/SCSS frontend and Node.js/Express backend to enhance game features.",
+      image: "/projects/virtail_escape.webp",
+      technologies: ["React", "SCSS", "Node.js", "MongoDB"],
+      github: "https://github.com",
+      live: "https://virtualescape.com.au/",
+      featured: true,
+    },
+
+    {
       title: "Content Submission Platform",
       description:
         "Get Expert Feedback from Verified Influencers. Critiqle is a platform where creator can submit their content and get expert feedback from verified Iinfluencers(Critiquers).",
@@ -29,6 +40,44 @@ const ProjectsSection = () => {
       technologies: ["Nextjs", "Firebase Authentication", "Firebase Bucket"],
       github: "https://github.com",
       live: "https://critiqle.com",
+      featured: true,
+    },
+    {
+      title: "JammNation: Mobile App to Connect Artists and Fans",
+      description:
+        "JammNation is a magical music platform that tears down barriers between artists and fans, bringing them closer to the music that matters. Fans stream tracks, access exclusive content, and engage directly with artists. Our role was to design a user-friendly website and mobile app for both iOS and Android, enabling fans to access the fandom and artists seamlessly.",
+      image: "/projects/case_study_jamm_nation.webp",
+      technologies: ["React Native", "GraphQl", "GetStream", "PostgressSQL"],
+      github: "https://github.com",
+      live: "https://jammnation.com/",
+      featured: true,
+    },
+    {
+      title: "OneSpace: Mobile App for Student Wellbeing with an AI-Powered.",
+      description:
+        "OneSpace is a wellbeing solution for students facing mental health, neurodiversity, and disability challenges. It provides a safe space for students to share their challenges, connect with support, and seek help early. OCloud Solutions built this cross-platform app with real-time chat and document storage, using AI to help students access support anytime, anywhere.",
+      image: "/projects/case_study_one_space_banner.webp",
+      technologies: [
+        "React Native",
+        "Expo Manged Workflow",
+        "AWS Amplify",
+        "AWS Cognito",
+        "AWS AppSync",
+        "AWS DynamoDB",
+        "Rasa Chatbot",
+      ],
+      github: "https://github.com",
+      live: "https://theonespace.co.uk/",
+      featured: true,
+    },
+    {
+      title: "Employee HR Policy Chatbot",
+      description:
+        "Built AI-powered HR chatbot with Firestore integration and automation deployed on Heroku.",
+      image: "/projects/employ_policy.png",
+      technologies: ["React", "Firebase", "N8N"],
+      github: "https://github.com",
+      live: "https://employee-policy-document.web.app/",
       featured: true,
     },
     {

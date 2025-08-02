@@ -26,11 +26,13 @@ const ExperienceSection = () => {
         "Led development of scalable web applications using React, Nextjs, Nestjs Node.js, and cloud technologies AWS and Firebase. Mentored junior developers and implemented best practices.",
       technologies: [
         "React",
+        "React Native",
         "Nextjs",
         "Nestjs",
         "TypeScript",
         "Node.js",
         "AWS",
+        "Firebase",
         "PostgreSQL",
         "MongoDB",
       ],
@@ -47,7 +49,16 @@ const ExperienceSection = () => {
       period: "Dec 2022 - Dec 2023",
       description:
         "Developed and maintained multiple client projects, focusing on modern web technologies and responsive design.",
-      technologies: ["React", "Express.js", "MongoDB", "Docker"],
+      technologies: [
+        "React",
+        "Nextjs",
+        "Nestjs",
+        "Nodejs",
+        "Express.js",
+        "MongoDB",
+        "Docker",
+        "GraphQL",
+      ],
       achievements: [
         "Built front-end applications using React.js and NextJs. And collaborated on full-stack development projects with Node.js and NestJS",
         "Reduced development time by 30%",
