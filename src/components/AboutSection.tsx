@@ -25,13 +25,13 @@ const AboutSection = () => {
     <section className="py-20 px-4">
       <div className="container mx-auto max-w-6xl">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
             About{" "}
             <span className="bg-text-gradient bg-clip-text text-transparent">
               Me
             </span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <p className="text-lg md:text-xl text-muted-foreground max-w-3xl mx-auto">
             Passionate developer with 3+ years of experience creating digital
             solutions that make a difference.
           </p>
