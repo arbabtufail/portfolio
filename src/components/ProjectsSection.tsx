@@ -32,63 +32,54 @@ const ProjectsSection = () => {
     {
       title: "Knowlej - Education Management Platform",
       shortDescription: "AI-powered education platform with smart attendance and student engagement features.",
-      fullDescription: "Knowlej is an AI-powered education platform that revolutionizes learning through cutting-edge technology and innovation. It streamlines attendance management and enhances student engagement in one comprehensive platform. The platform gamifies education by offering students real-world rewards like concert tickets, sports events, and exclusive experiences. Features include AI-powered personalized learning paths, seamless resource access, comprehensive progress tracking, and advanced analytics for educators. With its intuitive interface and robust backend, Knowlej is reshaping the future of education by creating more engaging and effective learning experiences for students and educators alike.",
+      fullDescription: "Knowlej is an AI-powered education platform that changes learning through technology and innovation. It makes attendance management and student engagement easier, all in one platform. The platform makes education more enjoyable by offering students rewards like concerts, sports events, and other real-world rewards. It also offers personalized learning, easy access to resources, and progress tracking for student success. As a result, Knowlej is reshaping the future of education with engaging learning experiences.",
       image: "/projects/project_knowlej_banner.webp",
-      technologies: ["Next.js", "Node.js", "PostgreSQL", "OpenAI", "TypeScript", "Tailwind CSS", "Prisma", "Redis", "AWS"],
+      technologies: ["Next.js", "Node.js", "PostgreSQL", "OpenAI", "TypeScript", "Tailwind CSS", "Prisma"],
       live: "https://www.knowlej.io/",
       featured: true,
     },
     {
       title: "Critiqle - Content Feedback Platform",
       shortDescription: "Platform connecting creators with verified influencers for expert content feedback.",
-      fullDescription: "Critiqle is a revolutionary platform that bridges the gap between content creators and verified influencers, providing expert feedback and insights. Creators can submit their content across various formats including videos, images, articles, and social media posts to receive professional critiques from industry experts. The platform features a sophisticated matching algorithm that pairs creators with relevant influencers based on niche, expertise, and content type. It includes secure user authentication, advanced file upload systems, real-time messaging, comprehensive feedback management, rating systems, and detailed analytics to track improvement over time.",
+      fullDescription: "Get Expert Feedback from Verified Influencers. Critiqle is a platform where creator can submit their content and get expert feedback from verified Influencers(Critiquers). The platform features secure user authentication, file upload system, and comprehensive feedback management system.",
       image: "/projects/project_critiqle.png",
-      technologies: ["Next.js", "Firebase Authentication", "Firebase Storage", "React", "TypeScript", "Stripe", "Socket.io", "Tailwind CSS"],
+      technologies: ["Next.js", "Firebase Authentication", "Firebase Storage", "React", "TypeScript"],
       live: "https://critiqle.com",
       featured: true,
     },
     {
-      title: "E-Commerce Platform",
-      shortDescription: "Full-stack e-commerce solution with payment integration and inventory management.",
-      fullDescription: "A comprehensive e-commerce platform built for modern businesses, featuring a complete shopping experience with advanced product catalog management, secure payment processing through multiple gateways, real-time inventory tracking, and sophisticated order management. The platform includes customer account management, wishlist functionality, advanced search and filtering, product recommendations using AI, multi-vendor support, comprehensive admin dashboard with analytics, and mobile-responsive design. Integrated with modern payment solutions and shipping APIs for seamless transactions.",
+      title: "Weather Dashboard",
+      shortDescription: "Beautiful weather dashboard with location-based forecasts and interactive charts.",
+      fullDescription: "A comprehensive weather dashboard featuring real-time weather data, location-based forecasts, interactive charts showing weather trends, and responsive design. Built with modern React components and integrated with reliable weather APIs for accurate data.",
       image: "/placeholder.svg",
-      technologies: ["React", "Node.js", "MongoDB", "Stripe", "Redux", "Express.js", "JWT", "AWS S3"],
-      live: "https://example.com",
-      featured: true,
-    },
-    {
-      title: "Task Management System",
-      shortDescription: "Collaborative project management tool with real-time updates and team collaboration.",
-      fullDescription: "A sophisticated task management and project collaboration platform designed for modern teams. Features include real-time collaboration with live updates, advanced project timeline management, task dependencies and milestone tracking, team communication tools, file sharing and version control, time tracking with detailed reporting, customizable workflows, and comprehensive project analytics. The platform supports multiple project methodologies including Agile and Kanban, with drag-and-drop interfaces, automated notifications, and integration with popular development tools.",
-      image: "/placeholder.svg",
-      technologies: ["Vue.js", "Node.js", "PostgreSQL", "Socket.io", "Docker", "Redis", "TypeScript", "Vuetify"],
+      technologies: ["React", "TypeScript", "Chart.js", "Weather API", "CSS3", "REST API"],
       live: "https://example.com",
       featured: false,
     },
     {
-      title: "Social Media Analytics Dashboard",
-      shortDescription: "Comprehensive analytics platform for social media performance tracking.",
-      fullDescription: "An advanced social media analytics platform that provides deep insights into social media performance across multiple platforms. Features include multi-platform integration (Instagram, Twitter, Facebook, LinkedIn), real-time engagement tracking, audience demographics analysis, content performance metrics, competitor analysis, automated reporting, custom dashboard creation, and AI-powered insights for content optimization. The platform includes advanced data visualization, export capabilities, white-label options, and API access for custom integrations.",
+      title: "Portfolio Website",
+      shortDescription: "Responsive portfolio website with dark mode, animations, and contact form.",
+      fullDescription: "A modern and responsive portfolio website featuring dark/light mode toggle, smooth animations, interactive contact form with validation, project showcase, and optimized performance. Built with latest web technologies and best practices.",
       image: "/placeholder.svg",
-      technologies: ["React", "Python", "FastAPI", "PostgreSQL", "Chart.js", "Docker", "Celery", "Redis"],
+      technologies: ["Next.js", "Tailwind CSS", "Framer Motion", "TypeScript", "React Hook Form"],
       live: "https://example.com",
       featured: false,
     },
     {
-      title: "Real Estate Portal",
-      shortDescription: "Modern real estate platform with property listings, virtual tours, and CRM.",
-      fullDescription: "A comprehensive real estate platform connecting buyers, sellers, and agents through a modern, intuitive interface. Features include advanced property search with map integration, high-resolution image galleries, 360-degree virtual tours, mortgage calculators, neighborhood insights, agent profiles and ratings, lead management CRM for agents, automated property alerts, comparative market analysis, and integrated communication tools. The platform includes mobile apps for both iOS and Android, advanced filtering options, and machine learning-powered property recommendations.",
+      title: "Blog Platform",
+      shortDescription: "Modern blog platform with markdown support, SEO optimization, and comment system.",
+      fullDescription: "A full-featured blog platform with markdown support for content creation, SEO optimization for better search rankings, commenting system for user engagement, admin dashboard, and content management features.",
       image: "/placeholder.svg",
-      technologies: ["Next.js", "Node.js", "MongoDB", "Google Maps API", "Cloudinary", "Stripe", "SendGrid", "React Native"],
+      technologies: ["Gatsby", "GraphQL", "Contentful", "Netlify", "React", "SEO"],
       live: "https://example.com",
       featured: false,
     },
     {
-      title: "Healthcare Management System",
-      shortDescription: "Digital healthcare platform for patient management and telemedicine.",
-      fullDescription: "A comprehensive healthcare management system designed to modernize medical practices and improve patient care. Features include electronic health records (EHR) management, appointment scheduling with automated reminders, telemedicine video consultations, prescription management, patient portal for accessing medical records, billing and insurance processing, medical inventory tracking, and compliance with healthcare regulations (HIPAA). The platform includes mobile applications for both patients and healthcare providers, integration with medical devices, and advanced security measures to protect sensitive medical data.",
+      title: "Mobile Fitness App",
+      shortDescription: "Cross-platform fitness tracking app with workout plans and progress analytics.",
+      fullDescription: "A comprehensive fitness tracking application with personalized workout plans, progress analytics with detailed charts, exercise library, nutrition tracking, and social features. Built for both iOS and Android platforms.",
       image: "/placeholder.svg",
-      technologies: ["React", "Node.js", "PostgreSQL", "WebRTC", "AWS", "Docker", "HIPAA Compliance", "Socket.io"],
+      technologies: ["React Native", "Firebase", "Redux", "Charts", "Expo", "AsyncStorage"],
       live: "https://example.com",
       featured: false,
     },
@@ -115,13 +106,7 @@ const ProjectsSection = () => {
 
         {/* Featured Projects Carousel */}
         <div className="mb-16">
-          <div className="flex justify-between items-center mb-8">
-            <h3 className="text-xl md:text-2xl lg:text-3xl font-bold">Featured Projects</h3>
-            <div className="flex gap-2">
-              <CarouselPrevious className="static translate-x-0 translate-y-0 h-8 w-8" />
-              <CarouselNext className="static translate-x-0 translate-y-0 h-8 w-8" />
-            </div>
-          </div>
+          <h3 className="text-xl md:text-2xl lg:text-3xl font-bold mb-8 text-center">Featured Projects</h3>
           <Carousel className="w-full max-w-7xl mx-auto">
             <CarouselContent className="-ml-2 md:-ml-4">
               {featuredProjects.map((project, index) => (
@@ -199,18 +184,14 @@ const ProjectsSection = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
+            <CarouselPrevious className="hidden md:flex" />
+            <CarouselNext className="hidden md:flex" />
           </Carousel>
         </div>
 
         {/* Notable Projects Carousel */}
         <div>
-          <div className="flex justify-between items-center mb-8">
-            <h3 className="text-xl md:text-2xl lg:text-3xl font-bold">Notable Projects</h3>
-            <div className="flex gap-2">
-              <CarouselPrevious className="static translate-x-0 translate-y-0 h-8 w-8" />
-              <CarouselNext className="static translate-x-0 translate-y-0 h-8 w-8" />
-            </div>
-          </div>
+          <h3 className="text-xl md:text-2xl lg:text-3xl font-bold mb-8 text-center">Notable Projects</h3>
           <Carousel className="w-full max-w-7xl mx-auto">
             <CarouselContent className="-ml-2 md:-ml-4">
               {notableProjects.map((project, index) => (
@@ -288,6 +269,8 @@ const ProjectsSection = () => {
                 </CarouselItem>
               ))}
             </CarouselContent>
+            <CarouselPrevious className="hidden md:flex" />
+            <CarouselNext className="hidden md:flex" />
           </Carousel>
         </div>
 
