@@ -17,16 +17,19 @@ import {
 
 const SkillsSection = () => {
   const frontendSkills = [
-    { name: "React/Next.js", level: 95, color: "bg-blue-500", icon: Code2 },
-    { name: "TypeScript", level: 90, color: "bg-blue-600", icon: Code2 },
-    { name: "JavaScript", level: 95, color: "bg-yellow-500", icon: Code2 },
-    { name: "CSS/Tailwind", level: 90, color: "bg-cyan-500", icon: Palette },
+    { name: "React", level: 95, color: "bg-blue-500", icon: Code2 },
+    { name: "Next.js", level: 90, color: "bg-red-500", icon: Code2 },
     {
       name: "React Native",
       level: 80,
       color: "bg-orange-500",
       icon: Smartphone,
     },
+    { name: "TypeScript", level: 90, color: "bg-blue-600", icon: Code2 },
+    { name: "JavaScript", level: 95, color: "bg-yellow-500", icon: Code2 },
+    { name: "HTML", level: 80, color: "bg-red-500", icon: Code2 },
+    { name: "CSS/Tailwind", level: 90, color: "bg-cyan-500", icon: Palette },
+    
     { name: "Bubble.io", level: 70, color: "bg-pink-500", icon: Globe },
   ];
 
