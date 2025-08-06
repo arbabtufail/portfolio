@@ -7,115 +7,215 @@ import {
 } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { ExternalLink, Github } from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
+import { ExternalLink, ChevronLeft, ChevronRight } from "lucide-react";
+import { useState } from "react";
+
+// Component for individual project card with flip functionality
+const ProjectCard = ({ project }: { project: any }) => {
+  const [isFlipped, setIsFlipped] = useState(false);
+  
+  const visibleTechnologies = project.technologies.slice(0, 4);
+  const remainingCount = project.technologies.length - 4;
+  
+  return (
+    <div 
+      className="relative h-96 w-full cursor-pointer"
+      style={{ perspective: '1000px' }}
+      onClick={() => setIsFlipped(!isFlipped)}
+    >
+      <div 
+        className={`relative w-full h-full transition-transform duration-700 ${isFlipped ? 'transform' : ''}`}
+        style={{ 
+          transformStyle: 'preserve-3d',
+          transform: isFlipped ? 'rotateY(180deg)' : 'rotateY(0deg)'
+        }}
+      >
+        
+        {/* Front Side */}
+        <Card 
+          className="absolute inset-0 w-full h-full bg-card border-border hover:shadow-lg transition-all duration-300"
+          style={{ backfaceVisibility: 'hidden' }}
+        >
+          <CardHeader className="p-4">
+            <div className="h-40 bg-muted rounded-lg mb-3 overflow-hidden">
+              <img 
+                src={project.image} 
+                alt={project.title}
+                className="w-full h-full object-cover"
+              />
+            </div>
+            <CardTitle className="text-lg leading-tight mb-2 line-clamp-2">
+              {project.title}
+            </CardTitle>
+            <CardDescription className="text-sm line-clamp-3">
+              {project.description.substring(0, 120)}...
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="p-4 pt-0">
+            <div className="flex flex-wrap gap-1">
+              {visibleTechnologies.map((tech, index) => (
+                <Badge key={index} variant="outline" className="text-xs">
+                  {tech}
+                </Badge>
+              ))}
+              {remainingCount > 0 && (
+                <Badge variant="outline" className="text-xs bg-primary/10">
+                  +{remainingCount}
+                </Badge>
+              )}
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Back Side */}
+        <Card 
+          className="absolute inset-0 w-full h-full bg-card border-border"
+          style={{ 
+            backfaceVisibility: 'hidden',
+            transform: 'rotateY(180deg)'
+          }}
+        >
+          <CardHeader className="p-4">
+            <CardTitle className="text-lg mb-2">{project.title}</CardTitle>
+          </CardHeader>
+          <CardContent className="p-4 pt-0 flex flex-col h-full">
+            <div className="flex-1 overflow-y-auto mb-4 custom-scrollbar">
+              <CardDescription className="text-sm mb-4 leading-relaxed">
+                {project.description}
+              </CardDescription>
+              <div className="flex flex-wrap gap-1 mb-4">
+                {project.technologies.map((tech, index) => (
+                  <Badge key={index} variant="outline" className="text-xs">
+                    {tech}
+                  </Badge>
+                ))}
+              </div>
+            </div>
+            <Button variant="default" size="sm" asChild className="mt-auto">
+              <a
+                href={project.live}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <ExternalLink className="h-4 w-4 mr-2" />
+                Live Demo
+              </a>
+            </Button>
+          </CardContent>
+        </Card>
+      </div>
+    </div>
+  );
+};
 
 const ProjectsSection = () => {
   const projects = [
     {
-      title: "A unified platform for efficient education management",
+      title: "Knowlej - AI-Powered Education Platform",
       description:
-        "Knowlej is an AI-powered education platform that changes learning through technology and innovation. It makes attendance management and student engagement easier, all in one platform. The platform makes education more enjoyable by offering students rewards like concerts, sports events, and other real-world rewards. It also offers personalized learning, easy access to resources, and progress tracking for student success. As a result, Knowlej is reshaping the future of education with engaging learning experiences.",
+        "Knowlej is an AI-powered education platform that transforms learning through technology and innovation. It streamlines attendance management and student engagement in one unified platform. The platform enhances education by offering students real-world rewards like concert tickets, sports events, and exclusive experiences. Features include personalized learning paths, seamless resource access, comprehensive progress tracking, and gamified learning experiences that boost student motivation and success rates.",
       image: "/projects/project_knowlej_banner.webp",
-      technologies: ["Nextjs", "Node.js", "PostgreSQL", "OpenAI"],
+      technologies: ["Next.js", "Node.js", "PostgreSQL", "OpenAI", "React", "TypeScript", "Tailwind CSS"],
       github: "https://github.com",
       live: "https://www.knowlej.io/",
       featured: true,
     },
     {
-      title: "Experios Immersive Escape Rooms Platform",
+      title: "Experios - Immersive Virtual Escape Rooms",
       description:
-        "Experios brings people together by creating fun experiences that last.Collaborated on online escape room development and added new games with React/SCSS frontend and Node.js/Express backend to enhance game features.",
+        "Experios creates unforgettable virtual experiences that bring people together through interactive escape rooms. This platform features real-time multiplayer gameplay, immersive storytelling, and challenging puzzles. Built with cutting-edge technology to deliver seamless user experiences across devices. The platform includes voice chat integration, progress tracking, team management tools, and customizable room themes for different difficulty levels.",
       image: "/projects/virtail_escape.webp",
-      technologies: ["React", "SCSS", "Node.js", "MongoDB"],
+      technologies: ["React", "SCSS", "Node.js", "MongoDB", "Express", "Socket.io", "WebRTC"],
       github: "https://github.com",
       live: "https://virtualescape.com.au/",
       featured: true,
     },
-
     {
-      title: "Content Submission Platform",
+      title: "Critiqle - Content Feedback Platform",
       description:
-        "Get Expert Feedback from Verified Influencers. Critiqle is a platform where creator can submit their content and get expert feedback from verified Iinfluencers(Critiquers).",
+        "Critiqle is a revolutionary platform connecting content creators with verified industry influencers for expert feedback. Creators can submit their content and receive detailed, professional critiques from established influencers in their niche. The platform features secure file upload, real-time messaging, review tracking, payment processing, and a sophisticated matching algorithm that pairs creators with the most relevant experts in their field.",
       image: "/projects/project_critiqle.png",
-      technologies: ["Nextjs", "Firebase Authentication", "Firebase Bucket"],
+      technologies: ["Next.js", "Firebase Auth", "Firebase Storage", "React", "TypeScript", "Stripe"],
       github: "https://github.com",
       live: "https://critiqle.com",
       featured: true,
     },
     {
-      title: "JammNation: Mobile App to Connect Artists and Fans",
+      title: "JammNation - Artist-Fan Connection App",
       description:
-        "JammNation is a magical music platform that tears down barriers between artists and fans, bringing them closer to the music that matters. Fans stream tracks, access exclusive content, and engage directly with artists. Our role was to design a user-friendly website and mobile app for both iOS and Android, enabling fans to access the fandom and artists seamlessly.",
+        "JammNation bridges the gap between artists and fans through a comprehensive music platform. Fans can stream exclusive tracks, access behind-the-scenes content, and interact directly with their favorite artists. The platform includes live streaming capabilities, fan engagement tools, merchandise integration, concert notifications, and social features that create meaningful connections between artists and their communities.",
       image: "/projects/case_study_jamm_nation.webp",
-      technologies: ["React Native", "GraphQl", "GetStream", "PostgressSQL"],
+      technologies: ["React Native", "GraphQL", "GetStream", "PostgreSQL", "Apollo", "Expo"],
       github: "https://github.com",
       live: "https://jammnation.com/",
       featured: true,
     },
     {
-      title: "OneSpace: Mobile App for Student Wellbeing with an AI-Powered.",
+      title: "OneSpace - AI-Powered Student Wellbeing",
       description:
-        "OneSpace is a wellbeing solution for students facing mental health, neurodiversity, and disability challenges. It provides a safe space for students to share their challenges, connect with support, and seek help early. OCloud Solutions built this cross-platform app with real-time chat and document storage, using AI to help students access support anytime, anywhere.",
+        "OneSpace provides comprehensive wellbeing support for students facing mental health, neurodiversity, and disability challenges. The platform creates a safe environment for students to share experiences, connect with peer support, and access professional help. Features include AI-powered chatbot assistance, secure document storage, real-time crisis intervention, progress tracking, and seamless integration with educational institutions.",
       image: "/projects/case_study_one_space_banner.webp",
       technologies: [
-        "React Native",
-        "Expo Manged Workflow",
-        "AWS Amplify",
-        "AWS Cognito",
-        "AWS AppSync",
-        "AWS DynamoDB",
-        "Rasa Chatbot",
+        "React Native", "Expo", "AWS Amplify", "AWS Cognito", "AWS AppSync", "DynamoDB", "Rasa AI", "GraphQL"
       ],
       github: "https://github.com",
       live: "https://theonespace.co.uk/",
       featured: true,
     },
     {
-      title: "Employee HR Policy Chatbot",
+      title: "HR Policy Chatbot - Smart Employee Assistant",
       description:
-        "Built AI-powered HR chatbot with Firestore integration and automation deployed on Heroku.",
+        "An intelligent HR chatbot that revolutionizes employee policy queries and workplace assistance. Built with advanced NLP capabilities, this system provides instant answers to policy questions, automates common HR processes, and integrates seamlessly with existing HR systems. Features include multi-language support, document search, escalation workflows, and comprehensive analytics for HR teams to track common employee concerns and improve policies.",
       image: "/projects/employ_policy.png",
-      technologies: ["React", "Firebase", "N8N"],
+      technologies: ["React", "Firebase", "N8N", "NLP", "Firestore", "Cloud Functions"],
       github: "https://github.com",
       live: "https://employee-policy-document.web.app/",
       featured: true,
     },
     {
-      title: "Weather Dashboard",
+      title: "Weather Analytics Dashboard",
       description:
-        "Beautiful weather dashboard with location-based forecasts and interactive charts.",
+        "A comprehensive weather dashboard featuring real-time forecasts, historical data analysis, and interactive visualizations. The platform provides location-based weather insights with advanced charting capabilities and predictive analytics for weather patterns.",
       image: "/placeholder.svg",
-      technologies: ["React", "TypeScript", "Chart.js", "Weather API"],
+      technologies: ["React", "TypeScript", "Chart.js", "Weather API", "D3.js", "Material-UI"],
       github: "https://github.com",
       live: "https://example.com",
       featured: false,
     },
     {
-      title: "Portfolio Website",
+      title: "Dynamic Portfolio Website",
       description:
-        "Responsive portfolio website with dark mode, animations, and contact form.",
+        "A modern, responsive portfolio website featuring dark mode toggle, smooth animations, and an integrated contact system. Built with performance optimization and SEO best practices in mind.",
       image: "/placeholder.svg",
-      technologies: ["Next.js", "Tailwind CSS", "Framer Motion"],
+      technologies: ["Next.js", "Tailwind CSS", "Framer Motion", "TypeScript", "Vercel"],
       github: "https://github.com",
       live: "https://example.com",
       featured: false,
     },
     {
-      title: "Blog Platform",
+      title: "Blog CMS Platform",
       description:
-        "Modern blog platform with markdown support, SEO optimization, and comment system.",
+        "A modern content management system for bloggers featuring markdown support, SEO optimization, comment moderation, and analytics dashboard. Includes real-time collaboration and publishing workflows.",
       image: "/placeholder.svg",
-      technologies: ["Gatsby", "GraphQL", "Contentful", "Netlify"],
+      technologies: ["Gatsby", "GraphQL", "Contentful", "Netlify", "React", "Styled Components"],
       github: "https://github.com",
       live: "https://example.com",
       featured: false,
     },
     {
-      title: "Mobile Fitness App",
+      title: "FitTrack - Mobile Fitness Companion",
       description:
-        "Cross-platform fitness tracking app with workout plans and progress analytics.",
+        "A cross-platform fitness application featuring personalized workout plans, progress analytics, social challenges, and nutrition tracking. Includes wearable device integration and AI-powered recommendations.",
       image: "/placeholder.svg",
-      technologies: ["React Native", "Firebase", "Redux", "Charts"],
+      technologies: ["React Native", "Firebase", "Redux", "Chart.js", "Apple HealthKit", "Google Fit"],
       github: "https://github.com",
       live: "https://example.com",
       featured: false,
@@ -127,11 +227,11 @@ const ProjectsSection = () => {
 
   return (
     <section className="py-20 px-4">
-      <div className="container mx-auto max-w-6xl">
+      <div className="container mx-auto max-w-7xl">
         <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-6">
             Featured{" "}
-            <span className="bg-text-gradient bg-clip-text text-transparent">
+            <span className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
               Projects
             </span>
           </h2>
@@ -141,118 +241,105 @@ const ProjectsSection = () => {
           </p>
         </div>
 
-        {/* Featured Projects */}
-        <div className="grid lg:grid-cols-2 gap-8 mb-16">
-          {featuredProjects.map((project, index) => (
-            <Card
-              key={index}
-              className="bg-card-gradient border-border hover:shadow-card transition-all duration-300 group"
-            >
-              <CardHeader>
-                <div className="aspect-video bg-secondary rounded-lg mb-4 flex items-center justify-center">
-                  <img src={project.image} alt={project.title} />
-                </div>
-                <CardTitle className="text-2xl group-hover:text-primary transition-colors">
-                  {project.title}
-                </CardTitle>
-                <CardDescription className="text-base">
-                  {project.description}
-                </CardDescription>
-              </CardHeader>
-              <CardContent>
-                <div className="flex flex-wrap gap-2 mb-6">
-                  {project.technologies.map((tech, techIndex) => (
-                    <Badge key={techIndex} variant="outline">
-                      {tech}
-                    </Badge>
-                  ))}
-                </div>
-                <div className="flex gap-3">
-                  <Button variant="default" size="sm" asChild>
-                    <a
-                      href={project.live}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <ExternalLink className="h-4 w-4 mr-2" />
-                      Live Demo
-                    </a>
-                  </Button>
-                  {/* <Button variant="outline" size="sm" asChild>
-                    <a
-                      href={project.github}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Github className="h-4 w-4 mr-2" />
-                      Code
-                    </a>
-                  </Button> */}
-                </div>
-              </CardContent>
-            </Card>
-          ))}
+        {/* Featured Projects Carousel */}
+        <div className="mb-16">
+          <div className="relative">
+            <div className="flex justify-end mb-4">
+              <div className="flex gap-2">
+                <Button
+                  variant="outline"
+                  size="icon"
+                  className="h-10 w-10"
+                  onClick={() => {
+                    const prevButton = document.querySelector('[data-carousel="featured"] [data-direction="prev"]') as HTMLButtonElement;
+                    prevButton?.click();
+                  }}
+                >
+                  <ChevronLeft className="h-4 w-4" />
+                </Button>
+                <Button
+                  variant="outline"
+                  size="icon"
+                  className="h-10 w-10"
+                  onClick={() => {
+                    const nextButton = document.querySelector('[data-carousel="featured"] [data-direction="next"]') as HTMLButtonElement;
+                    nextButton?.click();
+                  }}
+                >
+                  <ChevronRight className="h-4 w-4" />
+                </Button>
+              </div>
+            </div>
+            
+            <Carousel className="w-full" data-carousel="featured">
+              <CarouselContent className="-ml-2 md:-ml-4">
+                {featuredProjects.map((project, index) => (
+                  <CarouselItem key={index} className="pl-2 md:pl-4 basis-full md:basis-1/2 lg:basis-1/3">
+                    <ProjectCard project={project} />
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="hidden" data-direction="prev" />
+              <CarouselNext className="hidden" data-direction="next" />
+            </Carousel>
+          </div>
         </div>
 
-        {/* Other Projects */}
-        {/* <div>
-          <h3 className="text-2xl font-bold mb-8 text-center">
-            Other Notable Projects
-          </h3>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {otherProjects.map((project, index) => (
-              <Card
-                key={index}
-                className="bg-card-gradient border-border hover:shadow-card transition-all duration-300 group"
-              >
-                <CardHeader>
-                  <CardTitle className="group-hover:text-primary transition-colors">
-                    {project.title}
-                  </CardTitle>
-                  <CardDescription>{project.description}</CardDescription>
-                </CardHeader>
-                <CardContent>
-                  <div className="flex flex-wrap gap-1 mb-4">
-                    {project.technologies.slice(0, 3).map((tech, techIndex) => (
-                      <Badge
-                        key={techIndex}
-                        variant="outline"
-                        className="text-xs"
-                      >
-                        {tech}
-                      </Badge>
-                    ))}
-                    {project.technologies.length > 3 && (
-                      <Badge variant="outline" className="text-xs">
-                        +{project.technologies.length - 3}
-                      </Badge>
-                    )}
-                  </div>
-                  <div className="flex gap-2">
-                    <Button variant="outline" size="sm" asChild>
-                      <a
-                        href={project.live}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <ExternalLink className="h-3 w-3" />
-                      </a>
-                    </Button>
-                    <Button variant="outline" size="sm" asChild>
-                      <a
-                        href={project.github}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <Github className="h-3 w-3" />
-                      </a>
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
+        {/* Notable Projects Carousel */}
+        <div>
+          <div className="text-center mb-8">
+            <h3 className="text-2xl md:text-3xl font-bold mb-4">
+              Notable{" "}
+              <span className="bg-gradient-to-r from-primary to-primary/60 bg-clip-text text-transparent">
+                Projects
+              </span>
+            </h3>
+            <p className="text-lg text-muted-foreground">
+              Additional projects showcasing diverse technical capabilities.
+            </p>
           </div>
-        </div> */}
+          
+          <div className="relative">
+            <div className="flex justify-end mb-4">
+              <div className="flex gap-2">
+                <Button
+                  variant="outline"
+                  size="icon"
+                  className="h-10 w-10"
+                  onClick={() => {
+                    const prevButton = document.querySelector('[data-carousel="notable"] [data-direction="prev"]') as HTMLButtonElement;
+                    prevButton?.click();
+                  }}
+                >
+                  <ChevronLeft className="h-4 w-4" />
+                </Button>
+                <Button
+                  variant="outline"
+                  size="icon"
+                  className="h-10 w-10"
+                  onClick={() => {
+                    const nextButton = document.querySelector('[data-carousel="notable"] [data-direction="next"]') as HTMLButtonElement;
+                    nextButton?.click();
+                  }}
+                >
+                  <ChevronRight className="h-4 w-4" />
+                </Button>
+              </div>
+            </div>
+            
+            <Carousel className="w-full" data-carousel="notable">
+              <CarouselContent className="-ml-2 md:-ml-4">
+                {otherProjects.map((project, index) => (
+                  <CarouselItem key={index} className="pl-2 md:pl-4 basis-full md:basis-1/2 lg:basis-1/3">
+                    <ProjectCard project={project} />
+                  </CarouselItem>
+                ))}
+              </CarouselContent>
+              <CarouselPrevious className="hidden" data-direction="prev" />
+              <CarouselNext className="hidden" data-direction="next" />
+            </Carousel>
+          </div>
+        </div>
       </div>
     </section>
   );
