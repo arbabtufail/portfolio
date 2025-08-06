@@ -86,7 +86,7 @@ const HeroSection = () => {
                 <Mail className="h-6 w-6" />
               </Button>
             </a>
-            <Link to="/blogs">
+            <a href="https://medium.com/@arbabtufail2022">
               <Button
                 variant="ghost"
                 size="icon"
@@ -94,7 +94,7 @@ const HeroSection = () => {
               >
                 <Rss className="h-6 w-6" />
               </Button>
-            </Link>
+            </a>
           </div>
 
           {/* Scroll indicator */}

@@ -5,7 +5,15 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
-import { Mail, Phone, MapPin, Github, Linkedin, Twitter } from "lucide-react";
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Github,
+  Linkedin,
+  Twitter,
+  Rss,
+} from "lucide-react";
 
 const ContactSection = () => {
   const { toast } = useToast();
@@ -71,11 +79,11 @@ const ContactSection = () => {
       label: "LinkedIn",
       href: "https://www.linkedin.com/in/arbab-tufail/",
     },
-    // {
-    //   icon: Twitter,
-    //   label: "Twitter",
-    //   href: "https://twitter.com",
-    // },
+    {
+      icon: Rss,
+      label: "Blogs",
+      href: "https://medium.com/@arbabtufail2022",
+    },
   ];
 
   return (

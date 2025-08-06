@@ -23,7 +23,7 @@ const Footer = () => {
     {
       name: "Blogs",
       icon: Rss,
-      href: "/blogs",
+      href: "https://medium.com/@arbabtufail2022",
     },
   ];
 
