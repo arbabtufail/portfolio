@@ -1,4 +1,4 @@
-import { Github, Linkedin, Mail, Heart } from "lucide-react";
+import { Github, Linkedin, Mail, Heart, Rss } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 const Footer = () => {
@@ -19,6 +19,11 @@ const Footer = () => {
       name: "Email",
       icon: Mail,
       href: "mailto:arbabtufail2022@gmail.com",
+    },
+    {
+      name: "Blogs",
+      icon: Rss,
+      href: "/blogs",
     },
   ];
 

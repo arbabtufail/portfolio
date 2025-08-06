@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { ArrowDown, Github, Linkedin, Mail } from "lucide-react";
+import { ArrowDown, Github, Linkedin, Mail, Rss } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const HeroSection = () => {
@@ -86,6 +86,15 @@ const HeroSection = () => {
                 <Mail className="h-6 w-6" />
               </Button>
             </a>
+            <Link to="/blogs">
+              <Button
+                variant="ghost"
+                size="icon"
+                className="hover:text-primary"
+              >
+                <Rss className="h-6 w-6" />
+              </Button>
+            </Link>
           </div>
 
           {/* Scroll indicator */}
