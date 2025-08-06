@@ -14,6 +14,7 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import type { CarouselApi } from "@/components/ui/carousel";
 import { ExternalLink, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState } from "react";
 
@@ -82,22 +83,27 @@ const ProjectCard = ({ project }: { project: any }) => {
             transform: 'rotateY(180deg)'
           }}
         >
-          <CardHeader className="p-4">
-            <CardTitle className="text-lg mb-2">{project.title}</CardTitle>
+          <CardHeader className="p-4 pb-2">
+            <CardTitle className="text-lg">{project.title}</CardTitle>
           </CardHeader>
           <CardContent className="p-4 pt-0 flex flex-col h-full">
-            <div className="flex-1 overflow-y-auto mb-4 custom-scrollbar">
-              <CardDescription className="text-sm mb-4 leading-relaxed">
+            {/* Description - Half height with scrolling */}
+            <div className="h-32 overflow-y-auto mb-3 custom-scrollbar">
+              <CardDescription className="text-sm leading-relaxed">
                 {project.description}
               </CardDescription>
-              <div className="flex flex-wrap gap-1 mb-4">
-                {project.technologies.map((tech, index) => (
-                  <Badge key={index} variant="outline" className="text-xs">
-                    {tech}
-                  </Badge>
-                ))}
-              </div>
             </div>
+            
+            {/* All Technology Badges */}
+            <div className="flex flex-wrap gap-1 mb-3">
+              {project.technologies.map((tech, index) => (
+                <Badge key={index} variant="outline" className="text-xs">
+                  {tech}
+                </Badge>
+              ))}
+            </div>
+            
+            {/* Live Demo Button */}
             <Button variant="default" size="sm" asChild className="mt-auto">
               <a
                 href={project.live}
@@ -271,7 +277,14 @@ const ProjectsSection = () => {
               </div>
             </div>
             
-            <Carousel className="w-full" data-carousel="featured">
+            <Carousel 
+              className="w-full" 
+              data-carousel="featured"
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+            >
               <CarouselContent className="-ml-2 md:-ml-4">
                 {featuredProjects.map((project, index) => (
                   <CarouselItem key={index} className="pl-2 md:pl-4 basis-full md:basis-1/2 lg:basis-1/3">
@@ -327,7 +340,14 @@ const ProjectsSection = () => {
               </div>
             </div>
             
-            <Carousel className="w-full" data-carousel="notable">
+            <Carousel 
+              className="w-full" 
+              data-carousel="notable"
+              opts={{
+                align: "start",
+                loop: true,
+              }}
+            >
               <CarouselContent className="-ml-2 md:-ml-4">
                 {otherProjects.map((project, index) => (
                   <CarouselItem key={index} className="pl-2 md:pl-4 basis-full md:basis-1/2 lg:basis-1/3">
