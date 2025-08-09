@@ -34,7 +34,7 @@ const Footer = () => {
           {/* Brand */}
           <div className="space-y-4">
             <h3 className="text-2xl font-bold bg-text-gradient bg-clip-text text-transparent">
-              Portfolio
+              Arbab Tufail
             </h3>
             <p className="text-muted-foreground">
               Software Engineer | Building Scalable Web && Mobile Apps

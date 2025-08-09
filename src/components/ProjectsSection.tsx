@@ -14,12 +14,11 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
-import type { CarouselApi } from "@/components/ui/carousel";
 import { ExternalLink, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState } from "react";
 
 // Component for individual project card with flip functionality
-const ProjectCard = ({ project }: { project: any }) => {
+const ProjectCard = ({ project }) => {
   const [isFlipped, setIsFlipped] = useState(false);
 
   const visibleTechnologies = project.technologies.slice(0, 4);
