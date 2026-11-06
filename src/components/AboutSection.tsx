@@ -32,7 +32,7 @@ const AboutSection = () => {
             </span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Passionate developer with 3+ years of experience creating digital
+            Passionate developer with 4+ years of experience creating digital
             solutions that make a difference.
           </p>
         </div>
@@ -52,7 +52,7 @@ const AboutSection = () => {
                   <div className="text-sm opacity-80">Projects</div>
                 </div>
                 <div className="bg-primary/10 text-primary rounded-lg px-4 py-3 text-center flex-1">
-                  <div className="text-2xl font-bold">3+</div>
+                  <div className="text-2xl font-bold">4+</div>
                   <div className="text-sm opacity-80">Years</div>
                 </div>
               </div>
@@ -63,7 +63,7 @@ const AboutSection = () => {
           <div className="order-1 lg:order-2">
             <div className="space-y-5">
               <p className="text-lg text-muted-foreground leading-relaxed">
-                Experienced Full Stack Developer with 3+ years of expertise in
+                Experienced Full Stack Developer with 4+ years of expertise in
                 designing, developing, and maintaining dynamic web and mobile
                 applications. I specialize in building modern UIs using React
                 and Next.js, and scalable cross-platform apps with React Native.

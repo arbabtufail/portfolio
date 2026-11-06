@@ -16,6 +16,8 @@ import {
 } from "@/components/ui/carousel";
 import { ExternalLink, ChevronLeft, ChevronRight } from "lucide-react";
 import { useState } from "react";
+import pumpProjectImage from "@/assets/pump-project.png.asset.json";
+import hiloAiProjectImage from "@/assets/hilo-ai-project.png.asset.json";
 
 // Component for individual project card with flip functionality
 const ProjectCard = ({ project }) => {
@@ -55,8 +57,8 @@ const ProjectCard = ({ project }) => {
             <CardTitle className="text-lg leading-tight mb-2 line-clamp-2">
               {project.title}
             </CardTitle>
-            <CardDescription className="text-sm line-clamp-3">
-              {project.description.substring(0, 120)}...
+              <CardDescription className="text-sm line-clamp-3">
+              {project.shortDescription ?? `${project.description.substring(0, 120)}...`}
             </CardDescription>
           </CardHeader>
           <CardContent className="p-4 pt-0">
@@ -124,6 +126,46 @@ const ProjectCard = ({ project }) => {
 
 const ProjectsSection = () => {
   const projects = [
+    {
+      title: "Pump — Real Estate Lead Management & Deal Pipeline Platform",
+      shortDescription:
+        "A real estate investor CRM for lead imports, list stacking, deal pipelines, and AI-powered checks.",
+      description:
+        "Pump is a real estate investor CRM and deal pipeline platform. It supports CSV and skip-trace imports, list stacking, and drag-and-drop deal pipelines to help investors organize leads and manage opportunities. Google Gemini AI powers death scrub checks. Built with Next.js, TypeScript, Supabase, PostgreSQL, Drizzle ORM, Google Gemini AI, and Redis.",
+      image: pumpProjectImage.url,
+      technologies: [
+        "Next.js",
+        "TypeScript",
+        "Supabase",
+        "PostgreSQL",
+        "Drizzle ORM",
+        "Google Gemini AI",
+        "Redis",
+      ],
+      live: "https://app.pumpstacker.com/",
+      featured: true,
+    },
+    {
+      title: "Hilo AI — AI-Powered Flight School Management Platform",
+      shortDescription:
+        "A flight-school platform for scheduling, learning, course building, payments, and AI assistance.",
+      description:
+        "Hilo AI is an AI-powered flight school management platform with student, instructor, and administrator features. It brings together flight scheduling, a learning management system, a course builder, an AI assistant, permissions, and payments. Built with Next.js, TypeScript, PostgreSQL, Prisma, Firebase, OpenAI, Stripe, Tailwind, and Shadcn.",
+      image: hiloAiProjectImage.url,
+      technologies: [
+        "Next.js",
+        "TypeScript",
+        "PostgreSQL",
+        "Prisma",
+        "Firebase",
+        "OpenAI",
+        "Stripe",
+        "Tailwind",
+        "Shadcn",
+      ],
+      live: "https://app.hilo.ai/",
+      featured: true,
+    },
     {
       title: "Knowlej - AI-Powered Education Platform",
       description:

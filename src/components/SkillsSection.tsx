@@ -159,7 +159,7 @@ const SkillsSection = () => {
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 mt-16">
           <div className="text-center">
             <div className="text-3xl md:text-4xl font-bold text-primary mb-2">
-              3+
+              4+
             </div>
             <div className="text-muted-foreground">Years Experience</div>
           </div>

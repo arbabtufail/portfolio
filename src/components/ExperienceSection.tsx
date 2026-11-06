@@ -20,8 +20,31 @@ const ExperienceSection = () => {
   const experiences = [
     {
       title: "Software Engineer",
+      company: "Softpers Interactive",
+      period: "Sep 2025 - Present",
+      description:
+        "Contribute to the development and delivery of full-stack product features, collaborating with teammates through pull requests, reviews, and QA workflows. Work on Hilo AI product enhancements and feature delivery, including implementation and refinement across multiple pull requests. Improve administrative workflows through automation and optimization, including all-student module operations for Admin users.",
+      technologies: [
+        "Next.js",
+        "TypeScript",
+        "PostgreSQL",
+        "Prisma",
+        "Firebase",
+        "OpenAI",
+        "Stripe",
+        "Tailwind",
+        "Shadcn",
+      ],
+      achievements: [
+        "Contribute to full-stack product feature development through pull requests, reviews, and QA workflows.",
+        "Deliver and refine Hilo AI product enhancements across multiple pull requests.",
+        "Improve Admin workflows with automation and optimized all-student module operations.",
+      ],
+    },
+    {
+      title: "Software Engineer",
       company: "Ocloud Solutions",
-      period: "Jan 2024 - Present",
+      period: "Jan 2024 - Aug 2025",
       description:
         "Led development of scalable web applications using React, Nextjs, Nestjs Node.js, and cloud technologies AWS and Firebase. Mentored junior developers and implemented best practices.",
       technologies: [
